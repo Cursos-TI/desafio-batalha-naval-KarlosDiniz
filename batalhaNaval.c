@@ -1,7 +1,10 @@
-#include <stdio.h>
+#include <stdio.h>  //inclui biblioteca
 
-#define LINHAS 10
-#define COLUNAS 10
+#define LINHAS 10   // define variável constante Linhas
+#define COLUNAS 10  // define variável constante Colunas
+#define LINHAS_HAB 3   // define variável constante Linhas Habilidades
+#define COLUNAS_HAB 5  // define variável constante Colunas Habilidades
+
 
 // Desafio Batalha Naval - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
@@ -27,7 +30,7 @@ int main() {
   {0, 0, 0, 0, 0, 0, 3 }  // Linha 8 da Matriz
   };
 
-  printf("*** Jogo Batalha Naval - Nivel Novato ***\n\n\n");
+  printf("*** Jogo Batalha Naval - Nivel Novato ***\n\n\n");  // Exibe mensagem inicial 
   printf("Confira abaixo a posição escolhida dos navios (horizontal e vertical)\n\n");
 
   // Informando a posição escolhida dos navios (horizontal)
@@ -71,7 +74,7 @@ int main() {
     {3, 0, 0, 0, 0, 0, 0, 0, 0, 0}  // Linha 9 da Matriz
   };
 
-    printf("\n*** Jogo Batalha Naval - Nivel Aventureiro ***\n\n\n");
+    printf("\n*** Jogo Batalha Naval - Nivel Aventureiro ***\n\n\n");   //Exibe mensagem de início do Nível Aventureiro
     printf("Confira abaixo a posição escolhida dos navios (horizontal, vertical e diagonal)\n\n");
 
     // Informando a posição escolhida dos navios (horizontal)
@@ -91,15 +94,15 @@ int main() {
     // Retorna a tabela total com a posição escolhida dos navios (sendo 3 para parte do navio e 0 para espaço vazio), como no tabuleiro2
     printf("Imprimindo o Tabuleiro2 na forma de coordenadas: \n\n\n");
 
-    for (int i=0; i< LINHAS; i++) {
-      for (int j=0; j< COLUNAS; j++){
+    for (int i=0; i< LINHAS; i++) {     // Loop externo para as linhas
+      for (int j=0; j< COLUNAS; j++){   // Loop interno para as colunas
         printf("tabuleiro2[%d][%d] = %d\n", i, j, tabuleiro2[i][j]); // Exibe o tabuleiro2 na forma de coordenadas, linha por linha
       }
       printf("\n");
     }
   printf("\nImprimindo o Tabuleiro2 na forma de Matriz: \n\n\n");
-      for (int i=0; i< LINHAS; i++) {
-        for (int j=0; j< COLUNAS; j++){
+      for (int i=0; i< LINHAS; i++) {     // Loop para imprimir cada linha
+        for (int j=0; j< COLUNAS; j++){   // Loop para imprimir cada coluna
           printf("%d ",tabuleiro2[i][j]); // Exibe o Tabuleiro2 no formato de Matriz:
         }
       printf("\n");
@@ -127,6 +130,58 @@ int main() {
     // 0 0 1 0 0
     // 1 1 1 1 1
     // 0 0 1 0 0
+
+    printf("\n*** Jogo Batalha Naval - Nivel Mestre ***\n\n\n");   //Exibe mensagem de início do Nível Mestre
+
+    // Criação e Exibição de matrizes conforme habilidades abaixo:
+
+    // Matriz para habilidade em cone:
+    printf("Exibição da Matriz para habilidade em cone:\n\n");
+    int Habilidade_Cone [LINHAS_HAB][COLUNAS_HAB] ={  
+      {0, 0, 1, 0, 0},
+      {0, 1, 1, 1, 0},
+      {1, 1, 1, 1, 1}
+    };
+
+      for (int i = 0; i < LINHAS_HAB; i++) {      // Loop para imprimir cada linha
+          for (int j = 0; j < COLUNAS_HAB; j++) {  // Loop para imprimir cada coluna
+              printf("%d ", Habilidade_Cone[i][j]);
+          }
+          printf("\n");
+      }
+      printf("\n\n");
+
+    // Matriz para habilidade em octaedro:
+    printf("Exibição da Matriz para habilidade em octaedro:\n\n");
+    int Habilidade_Octaedro [LINHAS_HAB][COLUNAS_HAB] ={  
+      {0, 0, 1, 0, 0},
+      {0, 1, 1, 1, 0},
+      {0, 0, 1, 0, 0}
+    };
+
+      for (int i = 0; i < LINHAS_HAB; i++) {      // Loop para imprimir cada linha
+          for (int j = 0; j < COLUNAS_HAB; j++) {  // Loop para imprimir cada coluna
+              printf("%d ", Habilidade_Octaedro[i][j]);
+          }
+          printf("\n");
+      }
+      printf("\n\n");
+
+    // Matriz para habilidade em cruz:
+    printf("Exibição da Matriz para habilidade em cruz:\n\n");
+    int Habilidade_Cruz [LINHAS_HAB][COLUNAS_HAB] ={  
+      {0, 0, 1, 0, 0},
+      {1, 1, 1, 1, 1},
+      {0, 0, 1, 0, 0}
+    };
+
+      for (int i = 0; i < LINHAS_HAB; i++) {      // Loop para imprimir cada linha
+          for (int j = 0; j < COLUNAS_HAB; j++) {  // Loop para imprimir cada coluna
+              printf("%d ", Habilidade_Cruz[i][j]);
+          }
+          printf("\n");
+      }
+      printf("\n\n");
 
     return 0;
 }
